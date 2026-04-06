@@ -1,0 +1,6 @@
+Para que tu foto de perfil aparezca en la página web correctamente:
+
+1. Guarda la imagen que subiste en el chat.
+2. Colócala DENTRO de esta misma carpeta (assets/images).
+3. Asegúrate de nombrarla exactamente como: "profile.jpg".
+4. Recarga tu página web (index.html) en el navegador.
