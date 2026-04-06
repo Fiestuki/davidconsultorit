@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil Profesional | LinkedIn Landing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xl font-bold text-blue-700 tracking-tighter">
+                TU<span class="text-gray-900">MARCA</span>
+            </div>
+
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition">About</a>
+                <a href="#featured" class="text-gray-600 hover:text-blue-600 font-medium transition">Featured Videos</a>
+                <a href="#blogs" class="text-gray-600 hover:text-blue-600 font-medium transition">Blogs</a>
+                <a href="#suscribete" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-blue-700 transition">
+                    Suscribirse
+                </a>
+            </div>
+
+            <div class="md:hidden text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <section class="pt-32 pb-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Impulsando resultados a través de [Tu Área]</h1>
+            <p class="text-xl text-gray-600 mb-8">Estratega, Creador y Profesional en busca de la excelencia.</p>
+            
+            <div class="video-container rounded-2xl shadow-2xl border-4 border-white mb-10">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 px-6 border-t">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 italic text-blue-700 underline decoration-blue-200"># About Me</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Con más de 5 años de trayectoria, me he especializado en transformar problemas complejos en soluciones digitales escalables. Mi enfoque en LinkedIn se basa en compartir conocimiento y conectar con mentes innovadoras.
+                </p>
+                <div class="flex gap-4">
+                    <div class="text-center">
+                        <span class="block text-2xl font-bold text-gray-900">10+</span>
+                        <span class="text-xs text-gray-500 uppercase">Proyectos</span>
+                    </div>
+                    <div class="text-center border-l pl-4">
+                        <span class="block text-2xl font-bold text-gray-900">5k+</span>
+                        <span class="text-xs text-gray-500 uppercase">Seguidores</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-200 h-64 rounded-2xl flex items-center justify-center text-gray-400">
+                [Tu Foto Profesional Aquí]
+            </div>
+        </div>
+    </section>
+
+    <section id="featured" class="bg-gray-50 py-20 px-6">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="text-3xl font-bold">Featured Videos</h2>
+            <p class="text-gray-500">Contenido seleccionado para tu crecimiento profesional.</p>
+        </div>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="group cursor-pointer">
+                <div class="bg-gray-300 aspect-video rounded-xl mb-4 overflow-hidden relative">
+                    <div class="absolute inset-0 flex items-center justify-center group-hover:bg-black/20 transition">
+                        <span class="bg-white p-3 rounded-full shadow-lg">▶</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-lg">Masterclass: Liderazgo Moderno</h4>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="bg-gray-300 aspect-video rounded-xl mb-4 overflow-hidden relative">
+                    <div class="absolute inset-0 flex items-center justify-center group-hover:bg-black/20 transition">
+                        <span class="bg-white p-3 rounded-full shadow-lg">▶</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-lg">Estrategias de Growth</h4>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="bg-gray-300 aspect-video rounded-xl mb-4 overflow-hidden relative">
+                    <div class="absolute inset-0 flex items-center justify-center group-hover:bg-black/20 transition">
+                        <span class="bg-white p-3 rounded-full shadow-lg">▶</span>
+                    </div>
+                </div>
+                <h4 class="font-bold text-lg">Soft Skills en Tech</h4>
+            </div>
+        </div>
+    </section>
+
+    <section id="blogs" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10">Últimos Artículos</h2>
+            <div class="space-y-6">
+                <div class="p-6 border rounded-xl hover:border-blue-500 transition cursor-pointer">
+                    <span class="text-blue-600 text-sm font-bold uppercase">Tecnología</span>
+                    <h3 class="text-xl font-bold mt-1">¿Cómo la IA cambiará el reclutamiento en 2026?</h3>
+                    <p class="text-gray-600 mt-2">Un análisis profundo sobre las tendencias de automatización...</p>
+                </div>
+                <div class="p-6 border rounded-xl hover:border-blue-500 transition cursor-pointer">
+                    <span class="text-blue-600 text-sm font-bold uppercase">Productividad</span>
+                    <h3 class="text-xl font-bold mt-1">Mis 5 herramientas favoritas para trabajar remoto.</h3>
+                    <p class="text-gray-600 mt-2">Desde gestión de tareas hasta bienestar mental...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="suscribete" class="py-20 px-6">
+        <div class="max-w-2xl mx-auto bg-gray-900 text-white p-10 rounded-3xl text-center">
+            <h2 class="text-3xl font-bold mb-4">¡Únete a la comunidad!</h2>
+            <p class="mb-8 text-gray-400">Recibe un correo semanal con contenido exclusivo directamente en tu bandeja de entrada.</p>
+            <form class="flex flex-col md:flex-row gap-3">
+                <input type="email" placeholder="email@ejemplo.com" class="w-full px-4 py-3 rounded-lg text-gray-900 outline-none">
+                <button class="bg-blue-600 hover:bg-blue-500 px-8 py-3 rounded-lg font-bold transition">Unirme</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 border-t text-center text-gray-500">
+        <p>&copy; 2026 Tu Nombre Profesional. Hecho con pasión.</p>
+    </footer>
+
+</body>
+</html>
