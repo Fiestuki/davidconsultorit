@@ -442,6 +442,48 @@
 
     <!-- Scripts -->
     <script>
+        
+    var form = document.getElementById("contact-form"); // Asegúrate de ponerle id="contact-form" al form si no lo tiene
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("form-status");
+      var data = new FormData(event.target);
+      
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "¡Gracias! Tu mensaje ha sido enviado.";
+          status.style.display = "block";
+          status.style.color = "#10b981"; // Verde
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
+            }
+            status.style.display = "block";
+            status.style.color = "#ef4444"; // Rojo
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
+        status.style.display = "block";
+        status.style.color = "#ef4444";
+      });
+    }
+    
+    // Asignar el evento submit al formulario
+    // Nota: Asegúrate de que tu etiqueta <form> tenga id="contact-form"
+    document.getElementById("contact-form").addEventListener("submit", handleSubmit);
+
         // Typewriter Effect Logic
         const roles = ["Administrador de Sistemas", "Especialista en Ciberseguridad", "Soporte IT Senior"];
         let i = 0;
