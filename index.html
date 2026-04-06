@@ -20,10 +20,7 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
-
-    <!-- Estilos Críticos Inline para asegurar visualización inmediata (Mover a styles.css preferiblemente) -->
+    <!-- Custom CSS (Puedes mover esto a tu archivo css/styles.css) -->
     <style>
         :root {
             --bg-color: #0f172a;       /* Slate 900 */
@@ -32,10 +29,10 @@
             --text-secondary: #94a3b8; /* Slate 400 */
             --accent: #38bdf8;         /* Sky 400 */
             --accent-hover: #0ea5e9;   /* Sky 500 */
-            --nav-bg: rgba(15, 23, 42, 0.9);
+            --nav-bg: rgba(15, 23, 42, 0.95);
         }
 
-        /* Reset básico y variables */
+        /* Reset básico */
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         
         body {
@@ -47,7 +44,6 @@
         }
 
         h1, h2, h3, .logo, .mono-font { font-family: 'JetBrains Mono', monospace; }
-
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
 
@@ -65,6 +61,7 @@
             font-weight: 600;
             cursor: pointer;
             border: 2px solid transparent;
+            font-size: 1rem;
         }
         .btn-primary {
             background-color: var(--accent);
@@ -105,11 +102,12 @@
 
         /* Hero Section */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%);
+            padding-top: 60px;
         }
         .hero-content {
             display: grid;
@@ -117,14 +115,14 @@
             align-items: center;
             gap: 50px;
         }
-        .greeting { color: var(--accent); font-weight: 600; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; }
+        .greeting { color: var(--accent); font-weight: 600; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; }
         .name { font-size: 3.5rem; line-height: 1.1; margin-bottom: 15px; font-weight: 800; }
         .role { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 25px; min-height: 1.6em; }
         .cursor { animation: blink 1s infinite; color: var(--accent); }
         @keyframes blink { 50% { opacity: 0; } }
         
         .subtitle { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 35px; max-width: 500px; }
-        .hero-cta { display: flex; gap: 15px; }
+        .hero-cta { display: flex; gap: 15px; flex-wrap: wrap; }
         
         .hero-image { position: relative; display: flex; justify-content: center; }
         .profile-pic {
@@ -204,7 +202,7 @@
             .hero-cta { justify-content: center; }
             .hero-image { order: -1; margin-bottom: 30px; }
             .profile-pic { width: 250px; height: 250px; }
-            .nav-links { display: none; } /* Necesitarás JS para toggle */
+            .nav-links { display: none; } 
             .mobile-menu-btn { display: block; }
             .contact-grid { grid-template-columns: 1fr; }
             .name { font-size: 2.5rem; }
@@ -232,7 +230,9 @@
     <header id="home" class="hero">
         <div class="container hero-content">
             <div class="hero-text">
+                <!-- CORRECCIÓN APLICADA AQUÍ -->
                 <p class="greeting">// Hola, soy</p>
+                
                 <h1 class="name">Jesús David <br><span class="highlight">Pérez Delgado.</span></h1>
                 
                 <!-- Efecto Typewriter -->
@@ -244,12 +244,12 @@
                 
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Contactar <i class="fas fa-arrow-right"></i></a>
-                    <!-- Enlace directo al PDF si existe, sino abre modal -->
-                    <a href="./assets/doc/cv-jesus david.pdf" download class="btn btn-outline" onclick="alert('Asegúrate de subir tu PDF a la carpeta assets')">Descargar CV <i class="fas fa-download"></i></a>
+                    <!-- Recuerda subir tu PDF a la carpeta assets -->
+                    <a href="./assets/cv-jesus-perez.pdf" download class="btn btn-outline">Descargar CV <i class="fas fa-download"></i></a>
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Asegúrate de tener esta imagen o cambia el src -->
+                <!-- Placeholder si no tienes foto aún -->
                 <img src="./assets/images/profile.jpg" alt="Jesús David Pérez Delgado" class="profile-pic" onerror="this.src='https://via.placeholder.com/320x320/1e293b/38bdf8?text=JDP'">
             </div>
         </div>
@@ -270,7 +270,7 @@
         </div>
     </section>
 
-    <!-- NEW: Tech Stack Section -->
+    <!-- Tech Stack Section -->
     <section id="stack" class="section" style="background: rgba(255,255,255,0.02);">
         <div class="container text-center">
             <h2 class="section-title">Stack Tecnológico<span class="highlight">.</span></h2>
@@ -284,7 +284,7 @@
                 <div class="tech-item"><i class="fas fa-terminal highlight"></i> Bash Scripting</div>
                 <div class="tech-item"><i class="fab fa-docker highlight"></i> Docker Básico</div>
                 <div class="tech-item"><i class="fas fa-database highlight"></i> SQL / BBDD</div>
-                <div class="tech-item"><i class="fas fa-headset highlight"></i> Soporte N1/N2</div>
+                <div class="tech-item"><i class="fas fa-headset highlight"></i> Soporte L1/L2/L3</div>
             </div>
         </div>
     </section>
@@ -332,7 +332,7 @@
     <!-- Education & Certifications Section -->
     <section id="education" class="section" style="background: rgba(255,255,255,0.02);">
         <div class="container">
-            <div class="contact-grid" style="align-items: start;"> <!-- Reusing grid layout -->
+            <div class="contact-grid" style="align-items: start;">
                 
                 <!-- Education -->
                 <div>
@@ -341,14 +341,14 @@
                         <li class="glass-card" style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start;">
                             <i class="fas fa-shield-alt highlight" style="font-size: 1.5rem; margin-top: 5px;"></i>
                             <div>
-                                <h4 style="font-weight: 700;">Especialista en Ciberseguridad</h4>
+                                <h4 style="font-weight: 700;">Esp. Ciberseguridad</h4>
                                 <p style="font-size: 0.9rem; color: var(--text-secondary);">CIFP Cesar Manrique (2024)</p>
                             </div>
                         </li>
                         <li class="glass-card" style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start;">
                             <i class="fas fa-network-wired highlight" style="font-size: 1.5rem; margin-top: 5px;"></i>
                             <div>
-                                <h4 style="font-weight: 700;">Grado Superior Admin. Redes (ASIR)</h4>
+                                <h4 style="font-weight: 700;">GS Admin. Redes (ASIR)</h4>
                                 <p style="font-size: 0.9rem; color: var(--text-secondary);">CIFP Cesar Manrique (2023)</p>
                             </div>
                         </li>
@@ -381,55 +381,77 @@
     </section>
 
     <!-- Contact Section -->
-<section id="contact" class="section">
-    <div class="container">
-        <h2 class="section-title text-center">Iniciemos un Proyecto<span class="highlight">.</span></h2>
-        <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-            Abierto a nuevas oportunidades profesionales. Contáctame mediante correo o redes sociales.
-        </p>
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title text-center">Iniciemos un Proyecto<span class="highlight">.</span></h2>
+            <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Abierto a nuevas oportunidades profesionales. Contáctame mediante correo o redes sociales.
+            </p>
 
-        <div class="contact-grid">
-            <div class="contact-info">
-                <!-- ... (El resto de tu información de contacto se queda igual) ... -->
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email Directo</h4>
-                        <a href="mailto:david_perezdelgado@hotmail.com" style="color: var(--accent);">david_perezdelgado@hotmail.com</a>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Directo</h4>
+                            <a href="mailto:david_perezdelgado@hotmail.com" style="color: var(--accent);">david_perezdelgado@hotmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <a href="tel:+34633522147" style="color: var(--text-primary);">633 522 147</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Ubicación</h4>
+                            <p style="color: var(--text-secondary);">España (Movilidad Geográfica)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links Added -->
+                    <div style="margin-top: 30px;">
+                        <h4 style="margin-bottom: 15px;">Redes Profesionales</h4>
+                        <div class="social-links" style="margin: 0; text-align: left;">
+                            <!-- RECUERDA PONER TUS ENLACES REALES AQUÍ -->
+                            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
-                <!-- ... -->
-            </div>
 
-            <!-- FORMULARIO ACTUALIZADO -->
-            <!-- Reemplaza 'TU_CODIGO_AQUI' con el código que te da Formspree -->
-            <form action="https://formspree.io/f/mlgoaono" method="POST" class="glass-card">
-                
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    Enviar Mensaje <i class="fas fa-paper-plane"></i>
-                </button>
-                
-                <!-- Mensaje de éxito opcional que muestra Formspree -->
-                <p id="form-status" style="margin-top: 10px; color: var(--accent); display: none;"></p>
-            </form>
+                <!-- FORMULARIO ACTUALIZADO CON FORMSPREE -->
+                <!-- INSTRUCCIÓN: Regístrate en formspree.io, crea un form y pega tu URL única abajo donde dice TU_CODIGO_AQUI -->
+                <form id="contact-form" action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST" class="glass-card">
+                    
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Enviar Mensaje <i class="fas fa-paper-plane"></i>
+                    </button>
+                    
+                    <!-- Mensaje de estado para JS -->
+                    <p id="form-status" style="margin-top: 15px; text-align: center; font-weight: bold; display: none;"></p>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -442,49 +464,7 @@
 
     <!-- Scripts -->
     <script>
-        
-    var form = document.getElementById("contact-form"); // Asegúrate de ponerle id="contact-form" al form si no lo tiene
-    
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("form-status");
-      var data = new FormData(event.target);
-      
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          status.innerHTML = "¡Gracias! Tu mensaje ha sido enviado.";
-          status.style.display = "block";
-          status.style.color = "#10b981"; // Verde
-          form.reset();
-        } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-            } else {
-              status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
-            }
-            status.style.display = "block";
-            status.style.color = "#ef4444"; // Rojo
-          })
-        }
-      }).catch(error => {
-        status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
-        status.style.display = "block";
-        status.style.color = "#ef4444";
-      });
-    }
-    
-    // Asignar el evento submit al formulario
-    // Nota: Asegúrate de que tu etiqueta <form> tenga id="contact-form"
-    document.getElementById("contact-form").addEventListener("submit", handleSubmit);
-
-        // Typewriter Effect Logic
+        // 1. Typewriter Effect Logic
         const roles = ["Administrador de Sistemas", "Especialista en Ciberseguridad", "Soporte IT Senior"];
         let i = 0;
         let timer;
@@ -510,7 +490,7 @@
             }
         }
 
-        // Mobile Menu Toggle (Básico)
+        // 2. Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
             const navLinks = document.querySelector('.nav-links');
             if(navLinks.style.display === 'flex') {
@@ -528,7 +508,55 @@
             }
         });
 
-        // Start Typewriter
+        // 3. Formspree AJAX Handling (Para que no recargue la página)
+        var form = document.getElementById("contact-form");
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("form-status");
+            var data = new FormData(event.target);
+            
+            // Verificar si el usuario puso su ID de Formspree
+            if(form.action.includes("TU_CODIGO_AQUI")) {
+                status.innerHTML = "⚠️ Error: Falta configurar el ID de Formspree en el HTML.";
+                status.style.color = "#ef4444";
+                status.style.display = "block";
+                return;
+            }
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.innerHTML = "✅ ¡Gracias! Tu mensaje ha sido enviado correctamente.";
+                    status.style.color = "#10b981"; // Verde
+                    status.style.display = "block";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
+                        }
+                        status.style.display = "block";
+                        status.style.color = "#ef4444"; // Rojo
+                    })
+                }
+            }).catch(error => {
+                status.innerHTML = "Oops! Hubo un problema de conexión.";
+                status.style.display = "block";
+                status.style.color = "#ef4444";
+            });
+        }
+        
+        form.addEventListener("submit", handleSubmit);
+
+        // Iniciar Typewriter al cargar
         document.addEventListener('DOMContentLoaded', typeWriter);
     </script>
 </body>
