@@ -7,28 +7,221 @@
     <meta name="description"
         content="Portfolio de Jesús David Pérez Delgado, Técnico IT en Canarias, Administrador de Sistemas y Especialista en Ciberseguridad.">
     <meta name="keywords"
-        content="Técnico IT Canarias, Ciberseguridad Tenerife, Administrador de Sistemas, Jesús David Pérez Delgado, Soporte Técnico">
-    <title>Jesús David Pérez Delgado | Especialista en Ciberseguridad y Sistemas</title>
-    <!-- Google Fonts -->
+        content="Técnico IT Canarias, Ciberseguridad Tenerife, Administrador de Sistemas, Jesús David Pérez Delgado, Soporte Técnico, Linux, Redes">
+    <meta name="author" content="Jesús David Pérez Delgado">
+    
+    <title>Jesús David Pérez | Ciberseguridad & Sistemas</title>
+
+    <!-- Google Fonts: Inter para texto, JetBrains Mono para toque técnico -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Custom CSS --->
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Estilos Críticos Inline para asegurar visualización inmediata (Mover a styles.css preferiblemente) -->
+    <style>
+        :root {
+            --bg-color: #0f172a;       /* Slate 900 */
+            --card-bg: #1e293b;        /* Slate 800 */
+            --text-primary: #f8fafc;   /* Slate 50 */
+            --text-secondary: #94a3b8; /* Slate 400 */
+            --accent: #38bdf8;         /* Sky 400 */
+            --accent-hover: #0ea5e9;   /* Sky 500 */
+            --nav-bg: rgba(15, 23, 42, 0.9);
+        }
+
+        /* Reset básico y variables */
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo, .mono-font { font-family: 'JetBrains Mono', monospace; }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* Utilidades */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .highlight { color: var(--accent); }
+        .section { padding: 80px 0; }
+        .text-center { text-align: center; }
+        
+        /* Botones */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+        }
+        .btn-outline {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--text-primary);
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 15px 0;
+        }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-size: 0.95rem; color: var(--text-secondary); }
+        .nav-links a:hover { color: var(--accent); }
+        .mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%);
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 50px;
+        }
+        .greeting { color: var(--accent); font-weight: 600; margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; }
+        .name { font-size: 3.5rem; line-height: 1.1; margin-bottom: 15px; font-weight: 800; }
+        .role { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 25px; min-height: 1.6em; }
+        .cursor { animation: blink 1s infinite; color: var(--accent); }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        .subtitle { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 35px; max-width: 500px; }
+        .hero-cta { display: flex; gap: 15px; }
+        
+        .hero-image { position: relative; display: flex; justify-content: center; }
+        .profile-pic {
+            width: 320px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+        /* Cards & Glassmorphism */
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.3s;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        /* Timeline */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after {
+            content: ''; position: absolute; width: 2px; background: rgba(255,255,255,0.1);
+            top: 0; bottom: 0; left: 20px; margin-left: -1px;
+        }
+        .timeline-item { padding: 10px 40px; position: relative; margin-bottom: 30px; }
+        .timeline-dot {
+            position: absolute; width: 16px; height: 16px; left: 12px; top: 15px;
+            background: var(--bg-color); border: 3px solid var(--accent); border-radius: 50%; z-index: 10;
+        }
+        .date { font-family: 'JetBrains Mono'; font-size: 0.85rem; color: var(--accent); display: block; margin-bottom: 5px; }
+        .timeline-content h3 { font-size: 1.25rem; margin-bottom: 5px; }
+        .timeline-content h4 { font-size: 1rem; color: var(--text-secondary); font-weight: 400; margin-bottom: 10px; }
+
+        /* Tech Stack Grid */
+        .tech-grid {
+            display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px;
+        }
+        .tech-item {
+            background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 50px;
+            font-size: 0.9rem; display: flex; align-items: center; gap: 8px; border: 1px solid transparent;
+        }
+        .tech-item:hover { border-color: var(--accent); background: rgba(56, 189, 248, 0.1); }
+
+        /* Contact Grid */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; margin-top: 40px; }
+        .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .contact-item i { 
+            width: 45px; height: 45px; background: rgba(56, 189, 248, 0.1); color: var(--accent);
+            display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 1.2rem;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 5px; color: white; font-family: 'Inter';
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
+
+        /* Footer */
+        footer { background: #0b1120; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+        .social-links { margin: 20px 0; }
+        .social-links a { margin: 0 10px; font-size: 1.5rem; color: var(--text-secondary); }
+        .social-links a:hover { color: var(--accent); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-cta { justify-content: center; }
+            .hero-image { order: -1; margin-bottom: 30px; }
+            .profile-pic { width: 250px; height: 250px; }
+            .nav-links { display: none; } /* Necesitarás JS para toggle */
+            .mobile-menu-btn { display: block; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .name { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
     <nav id="navbar">
         <div class="container nav-content">
-            <a href="#home" class="logo">JDP<span class="highlight"></span></a>
+            <a href="#home" class="logo">JDP<span class="highlight">_</span></a>
             <ul class="nav-links">
                 <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#stack">Stack Tech</a></li>
                 <li><a href="#experience">Experiencia</a></li>
                 <li><a href="#education">Formación</a></li>
-                <li><a href="#certifications">Certificaciones</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
             <button class="mobile-menu-btn" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
@@ -39,108 +232,96 @@
     <header id="home" class="hero">
         <div class="container hero-content">
             <div class="hero-text">
-                <p class="greeting">Hola, soy</p>
-                <h1 class="name">Jesús David <span class="highlight">Pérez Delgado.</span></h1>
-                <h2 class="role">Técnico Admin. de Sistemas | Redes | Ciberseguridad</h2>
-                <p class="subtitle">Soluciones tecnológicas eficientes, seguridad robusta y soporte avanzado para
-                    infraestructuras IT públicas y privadas.</p>
+                <p class="greeting">&lt;Hola, soy /&gt;</p>
+                <h1 class="name">Jesús David <br><span class="highlight">Pérez Delgado.</span></h1>
+                
+                <!-- Efecto Typewriter -->
+                <h2 class="role">
+                    <span id="typewriter"></span><span class="cursor">|</span>
+                </h2>
+                
+                <p class="subtitle">Soluciones tecnológicas eficientes, seguridad robusta y soporte avanzado para infraestructuras IT críticas.</p>
+                
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Contactar <i class="fas fa-arrow-right"></i></a>
-                    <a href="#" id="open-cv-modal" class="btn btn-secondary">Descargar CV <i
-                            class="fas fa-download"></i></a>
+                    <!-- Enlace directo al PDF si existe, sino abre modal -->
+                    <a href="./assets/doc/cv-jesus david.pdf" download class="btn btn-outline" onclick="alert('Asegúrate de subir tu PDF a la carpeta assets')">Descargar CV <i class="fas fa-download"></i></a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./assets/images/profile.jpg" alt="Jesús David Pérez Delgado" class="profile-pic">
+                <!-- Asegúrate de tener esta imagen o cambia el src -->
+                <img src="./assets/images/profile.jpg" alt="Jesús David Pérez Delgado" class="profile-pic" onerror="this.src='https://via.placeholder.com/320x320/1e293b/38bdf8?text=JDP'">
             </div>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="about section">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">Sobre Mí<span class="highlight">.</span></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Soy una persona formal y llena de energía, capaz de identificar y resolver problemas de manera
-                        eficiente. Mi enfoque profesional está centrado en mejorar la calidad del servicio, automatizar
-                        procesos y apuntalar la seguridad de la infraestructura para maximizar la satisfacción del
-                        cliente y el rendimiento corporativo.</p>
-                    <p>Cuento con disponibilidad total y movilidad (vehículo propio), lo que me permite adaptarme a las
-                        necesidades del entorno IT con flexibilidad, rapidez y plenas garantías.</p>
-                </div>
-                <div class="about-skills-quick">
-                    <div class="skill-tag">Administración de Sistemas</div>
-                    <div class="skill-tag">Redes</div>
-                    <div class="skill-tag">Ciberseguridad</div>
-                    <div class="skill-tag">Soporte Técnico Especializado</div>
-                    <div class="skill-tag">Resolución de Incidentes</div>
-                </div>
+            <h2 class="section-title text-center" style="margin-bottom: 40px;">Sobre Mí<span class="highlight">.</span></h2>
+            <div class="glass-card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 20px;">
+                    Soy un profesional IT con más de 17 años de experiencia, especializado en mantener la continuidad del negocio y la seguridad de la información. Mi enfoque combina la estabilidad de la administración de sistemas tradicional con las demandas modernas de la ciberseguridad perimetral.
+                </p>
+                <p style="color: var(--text-secondary);">
+                    Actualmente resido en España, cuento con vehículo propio y disponibilidad total para movilidad geográfica e incorporación inmediata.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Tech Stack Section -->
+    <section id="stack" class="section" style="background: rgba(255,255,255,0.02);">
+        <div class="container text-center">
+            <h2 class="section-title">Stack Tecnológico<span class="highlight">.</span></h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Herramientas y tecnologías que domino</p>
+            
+            <div class="tech-grid">
+                <div class="tech-item"><i class="fab fa-linux highlight"></i> Linux / Unix</div>
+                <div class="tech-item"><i class="fab fa-windows highlight"></i> Windows Server</div>
+                <div class="tech-item"><i class="fas fa-network-wired highlight"></i> Cisco Networking</div>
+                <div class="tech-item"><i class="fas fa-shield-alt highlight"></i> Ciberseguridad</div>
+                <div class="tech-item"><i class="fas fa-terminal highlight"></i> Bash Scripting</div>
+                <div class="tech-item"><i class="fab fa-docker highlight"></i> Docker Básico</div>
+                <div class="tech-item"><i class="fas fa-database highlight"></i> SQL / BBDD</div>
+                <div class="tech-item"><i class="fas fa-headset highlight"></i> Soporte L1/L2/L3</div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience section">
+    <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Experiencia Laboral<span class="highlight">.</span></h2>
+            <h2 class="section-title text-center" style="margin-bottom: 50px;">Experiencia Laboral<span class="highlight">.</span></h2>
             <div class="timeline">
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
                         <span class="date">Dic 2024 - Jun 2025</span>
                         <h3>Técnico Soporte</h3>
                         <h4>Inerza, S.A. (HiperReg)</h4>
-                        <p>Gestión y soporte técnico especializado para el Gobierno de Canarias. Mantenimiento y
-                            resolución de incidencias garantizando la alta disponibilidad y operatividad de los sistemas
-                            públicos críticos de la comunidad autónoma.</p>
+                        <p>Gestión y soporte técnico especializado para el Gobierno de Canarias. Mantenimiento y resolución de incidencias garantizando la alta disponibilidad de sistemas públicos críticos.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
                         <span class="date">Oct 2024 - Dic 2024</span>
                         <h3>Soporte Técnico Informático</h3>
-                        <h4>Fujitsu Serviclients Canarias (Cauce)</h4>
-                        <p>Prestación de servicios de soporte a la educación dentro del marco organizativo del Gobierno
-                            de Canarias. Aseguramiento del buen funcionamiento de las plataformas y recursos
-                            tecnológicos educativos.</p>
+                        <h4>Fujitsu Serviclients Canarias</h4>
+                        <p>Soporte a la educación dentro del marco del Gobierno de Canarias. Aseguramiento del funcionamiento de plataformas y recursos tecnológicos educativos.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content">
+                    <div class="timeline-content glass-card">
                         <span class="date">Jun 2003 - Nov 2020</span>
-                        <h3>Consultor y Soporte Técnico</h3>
-                        <h4>Consultores Canarios de Informática (Noray Software)</h4>
-                        <p>Más de 17 años de larga trayectoria y estabilidad liderando proyectos de consultoría,
-                            instalación de software de gestión y proveendo soporte técnico integral (Hardware, Redes,
-                            Software) a un amplio espectro de empresas de múltiples sectores.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="date">2002 - 2003</span>
-                        <h3>Monitor de Informática</h3>
-                        <h4>Instituto Las Veredillas</h4>
-                        <p>Impartición de clases y acompañamiento en ofimática, fundamentos de redes, y mantenimiento
-                            preventivo y correctivo de equipos informáticos.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="date">2001 - 2002</span>
-                        <h3>Técnico Informático e Instalador</h3>
-                        <h4>Megaram Informática & Atecresa</h4>
-                        <p>Montaje, reparación, ensamblaje de equipos e implementación de infraestructuras de red
-                            locales.</p>
+                        <h3>Consultor y Soporte Técnico Senior</h3>
+                        <h4>Consultores Canarios de Informática</h4>
+                        <p>Más de 17 años liderando proyectos de consultoría, instalación de software de gestión y soporte integral (Hardware, Redes, Software) a empresas multisectoriales.</p>
                     </div>
                 </div>
 
@@ -149,86 +330,63 @@
     </section>
 
     <!-- Education & Certifications Section -->
-    <section id="education" class="education-certs section">
+    <section id="education" class="section" style="background: rgba(255,255,255,0.02);">
         <div class="container">
-
-            <div class="grid-2">
-                <div class="education-block">
-                    <h2 class="section-title">Formación Académica<span class="highlight">.</span></h2>
-                    <ul class="ed-list">
-                        <li>
-                            <i class="fas fa-shield-alt highlight-icon"></i>
+            <div class="contact-grid" style="align-items: start;"> <!-- Reusing grid layout -->
+                
+                <!-- Education -->
+                <div>
+                    <h2 class="section-title">Formación<span class="highlight">.</span></h2>
+                    <ul style="margin-top: 20px;">
+                        <li class="glass-card" style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start;">
+                            <i class="fas fa-shield-alt highlight" style="font-size: 1.5rem; margin-top: 5px;"></i>
                             <div>
-                                <h3>Curso Especialización GS Ciberseguridad</h3>
-                                <p>CIFP Cesar Manrique (2023 - 2024)</p>
+                                <h4 style="font-weight: 700;">Esp. Ciberseguridad</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">CIFP Cesar Manrique (2024)</p>
                             </div>
                         </li>
-                        <li>
-                            <i class="fas fa-network-wired highlight-icon"></i>
+                        <li class="glass-card" style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start;">
+                            <i class="fas fa-network-wired highlight" style="font-size: 1.5rem; margin-top: 5px;"></i>
                             <div>
-                                <h3>Grado Superior Administración de Redes ASIR</h3>
-                                <p>CIFP Cesar Manrique (2020 - 2023)</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-laptop-code highlight-icon"></i>
-                            <div>
-                                <h3>Masters en Informática y Diseño Gráfico</h3>
-                                <p>Instituto Informático de Canarias</p>
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fas fa-server highlight-icon"></i>
-                            <div>
-                                <h3>FP II Técnico Especialista en Informática de Gestión</h3>
-                                <p>Formación Profesional</p>
+                                <h4 style="font-weight: 700;">Grado Superior Admin. Redes (ASIR)</h4>
+                                <p style="font-size: 0.9rem; color: var(--text-secondary);">CIFP Cesar Manrique (2023)</p>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div id="certifications" class="certifications-block">
+                <!-- Certifications -->
+                <div id="certifications">
                     <h2 class="section-title">Certificaciones<span class="highlight">.</span></h2>
-
-                    <div class="cert-card card-google">
-                        <div class="cert-icon"><i class="fab fa-google"></i></div>
-                        <div class="cert-info">
-                            <h3>Google IT Support</h3>
-                            <p>Professional Certificate</p>
+                    <div style="display: grid; gap: 15px; margin-top: 20px;">
+                        <div class="glass-card" style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fab fa-google" style="font-size: 2rem; color: #fff;"></i>
+                            <div>
+                                <h4 style="margin: 0;">Google IT Support</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Professional Certificate</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="cert-card card-cisco">
-                        <div class="cert-icon"><img
-                                src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Cisco_logo.svg" alt="Cisco"
-                                style="width: 50px; filter: invert(1) brightness(2);"></div>
-                        <div class="cert-info">
-                            <h3>Introduction to Cybersecurity</h3>
-                            <p>Cisco Certified</p>
+                        <div class="glass-card" style="display: flex; align-items: center; gap: 15px;">
+                            <i class="fab fa-cisco" style="font-size: 2rem; color: #049fd9;"></i>
+                            <div>
+                                <h4 style="margin: 0;">Intro to Cybersecurity</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Cisco Certified</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="other-skills">
-                        <h3>Otras Habilidades y Datos:</h3>
-                        <p><strong>Competencias:</strong> Ciberseguridad Perimetral · Hardening · Consultoría
-                            Estratégica TI · Mantenimiento de Servidores</p>
-                        <p><strong>Idiomas:</strong> Inglés Técnico (Nivel medio)</p>
-                        <p><strong>Vehículo:</strong> Carné de conducir B-1 y vehículo propio.</p>
-                        <p><strong>Disponibilidad:</strong> Total e Inmediata (Movilidad geográfica).</p>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title text-center">Iniciemos un Proyecto<span class="highlight">.</span></h2>
-            <p class="contact-desc text-center">Actualmente estoy abierto a nuevas oportunidades profesionales en el
-                ámbito de la ciberseguridad, administración de redes y soporte avanzado. Contáctame mediante un correo o
-                llenando el siguiente formulario.</p>
+            <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Abierto a nuevas oportunidades profesionales. Contáctame mediante correo o redes sociales.
+            </p>
 
             <div class="contact-grid">
                 <div class="contact-info">
@@ -236,48 +394,49 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email Directo</h4>
-                            <a href="mailto:david_perezdelgado@hotmail.com">david_perezdelgado@hotmail.com</a>
+                            <a href="mailto:david_perezdelgado@hotmail.com" style="color: var(--accent);">david_perezdelgado@hotmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
                         <div>
-                            <h4>Teléfono de Contacto</h4>
-                            <a href="tel:+34633522147">633 522 147</a>
+                            <h4>Teléfono</h4>
+                            <a href="tel:+34633522147" style="color: var(--text-primary);">633 522 147</a>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4>Localización</h4>
-                            <p>España</p>
+                            <h4>Ubicación</h4>
+                            <p style="color: var(--text-secondary);">España (Movilidad Geográfica)</p>
                         </div>
                     </div>
-                    <div class="contact-reference">
-                        <h4>Referencia Profesional Recomendada</h4>
-                        <p><i class="fas fa-user-tie"></i> <strong>Fernando Ojeda Chamorro</strong></p>
-                        <p class="ref-role">Director de Desarrollo en INERZA</p>
+                    
+                    <!-- Social Links Added -->
+                    <div style="margin-top: 30px;">
+                        <h4 style="margin-bottom: 15px;">Redes Profesionales</h4>
+                        <div class="social-links" style="margin: 0; text-align: left;">
+                            <a href="https://www.linkedin.com/in/jesús-david-pérez-delgado-821abb84" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/Fiestuki" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
                     </div>
                 </div>
 
-                <form id="contact-form" class="contact-form">
+                <!-- Formulario preparado para Formspree o similar -->
+                <form id="contact-form" class="glass-card">
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="Tu correo electrónico">
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
                     </div>
                     <div class="form-group">
                         <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required
-                            placeholder="¿En qué puedo ayudarte con tu infraestructura o negocio?"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje <i
-                            class="fas fa-paper-plane"></i></button>
-                    <p class="form-msg success-msg hidden"><i class="fas fa-check-circle"></i> Tu mensaje ha sido
-                        enviado correctamente. Me pondré en contacto muy pronto.</p>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>
@@ -286,30 +445,60 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <div class="footer-logo">JDP<span class="highlight">_</span></div>
-            <p>&copy; 2026 Jesús David Pérez Delgado. Todos los derechos reservados.</p>
-            <p class="footer-subtext">Diseñado para la eficiencia y seguridad.</p>
+            <div class="logo" style="margin-bottom: 10px;">JDP<span class="highlight">_</span></div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">&copy; 2026 Jesús David Pérez Delgado. Todos los derechos reservados.</p>
+            <p style="color: var(--text-secondary); font-size: 0.8rem; margin-top: 5px;">Diseñado para la eficiencia y seguridad.</p>
         </div>
     </footer>
 
-    <!-- CV Modal -->
-    <div id="cv-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 2rem;">Descargar CV<span
-                    class="highlight">.</span></h2>
-            <p style="margin-bottom: 2rem; color: var(--text-secondary);">Selecciona el formato en el que deseas
-                descargar mi currículum:</p>
-            <div class="modal-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                <a href="#" class="btn btn-primary" onclick="alert('Descarga en PDF (Simulado)')">Formato PDF <i
-                        class="fas fa-file-pdf"></i></a>
-                <a href="#" class="btn btn-secondary" onclick="alert('Descarga en Word (Simulado)')">Formato Word <i
-                        class="fas fa-file-word"></i></a>
-            </div>
-        </div>
-    </div>
+    <!-- Scripts -->
+    <script>
+        // Typewriter Effect Logic
+        const roles = ["Administrador de Sistemas", "Especialista en Ciberseguridad", "Soporte IT Senior"];
+        let i = 0;
+        let timer;
 
-    <script src="./js/main.js"></script>
+        function typeWriter() {
+            const heading = document.getElementById("typewriter");
+            const role = roles[i];
+            let currentText = heading.innerText;
+            
+            if (!this.isDeleting && currentText !== role) {
+                heading.innerText = role.substring(0, currentText.length + 1);
+                timer = setTimeout(typeWriter, 100);
+            } else if (!this.isDeleting && currentText === role) {
+                this.isDeleting = true;
+                timer = setTimeout(typeWriter, 2000); // Pausa al final
+            } else if (this.isDeleting && currentText !== "") {
+                heading.innerText = role.substring(0, currentText.length - 1);
+                timer = setTimeout(typeWriter, 50);
+            } else {
+                this.isDeleting = false;
+                i = (i + 1) % roles.length;
+                timer = setTimeout(typeWriter, 500);
+            }
+        }
+
+        // Mobile Menu Toggle (Básico)
+        document.querySelector('.mobile-menu-btn').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            if(navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '60px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'var(--bg-color)';
+                navLinks.style.padding = '20px';
+                navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+            }
+        });
+
+        // Start Typewriter
+        document.addEventListener('DOMContentLoaded', typeWriter);
+    </script>
 </body>
-
 </html>
