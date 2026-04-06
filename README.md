@@ -1,9 +1,3 @@
-Aquí tienes una propuesta completa y profesional para tu archivo `README.md`. Está diseñado para servir tanto como documentación técnica del proyecto como una presentación de tu perfil profesional.
-
-Puedes copiar y pegar este contenido directamente en tu archivo `README.md` en GitHub.
-
-***
-
 # Portfolio Profesional | Jesús David Pérez Delgado
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
