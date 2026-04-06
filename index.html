@@ -381,66 +381,55 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title text-center">Iniciemos un Proyecto<span class="highlight">.</span></h2>
-            <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
-                Abierto a nuevas oportunidades profesionales. Contáctame mediante correo o redes sociales.
-            </p>
+<section id="contact" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">Iniciemos un Proyecto<span class="highlight">.</span></h2>
+        <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+            Abierto a nuevas oportunidades profesionales. Contáctame mediante correo o redes sociales.
+        </p>
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email Directo</h4>
-                            <a href="mailto:david_perezdelgado@hotmail.com" style="color: var(--accent);">david_perezdelgado@hotmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <a href="tel:+34633522147" style="color: var(--text-primary);">633 522 147</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Ubicación</h4>
-                            <p style="color: var(--text-secondary);">España (Movilidad Geográfica)</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Social Links Added -->
-                    <div style="margin-top: 30px;">
-                        <h4 style="margin-bottom: 15px;">Redes Profesionales</h4>
-                        <div class="social-links" style="margin: 0; text-align: left;">
-                            <a href="https://www.linkedin.com/in/jesús-david-pérez-delgado-821abb84" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/Fiestuki" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <!-- ... (El resto de tu información de contacto se queda igual) ... -->
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Directo</h4>
+                        <a href="mailto:david_perezdelgado@hotmail.com" style="color: var(--accent);">david_perezdelgado@hotmail.com</a>
                     </div>
                 </div>
-
-                <!-- Formulario preparado para Formspree o similar -->
-                <form id="contact-form" class="glass-card">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Enviar Mensaje <i class="fas fa-paper-plane"></i></button>
-                </form>
+                <!-- ... -->
             </div>
+
+            <!-- FORMULARIO ACTUALIZADO -->
+            <!-- Reemplaza 'TU_CODIGO_AQUI' con el código que te da Formspree -->
+            <form action="https://formspree.io/f/mlgoaono" method="POST" class="glass-card">
+                
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Enviar Mensaje <i class="fas fa-paper-plane"></i>
+                </button>
+                
+                <!-- Mensaje de éxito opcional que muestra Formspree -->
+                <p id="form-status" style="margin-top: 10px; color: var(--accent); display: none;"></p>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
