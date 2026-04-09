@@ -4,51 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO y Metadatos -->
-    <meta name="description" content="Portfolio de Jesús David Pérez Delgado, Técnico IT Senior, Administrador de Sistemas y Especialista en Ciberseguridad con +17 años de experiencia.">
-    <meta name="keywords" content="Técnico IT Canarias, Ciberseguridad, Admin Sistemas, Linux, Redes, Soporte IT, Jesús David Pérez">
+    <meta name="description"
+        content="Portfolio de Jesús David Pérez Delgado, Técnico IT en Canarias, Administrador de Sistemas y Especialista en Ciberseguridad.">
+    <meta name="keywords"
+        content="Técnico IT Canarias, Ciberseguridad Tenerife, Administrador de Sistemas, Jesús David Pérez Delgado, Soporte Técnico, Linux, Redes">
     <meta name="author" content="Jesús David Pérez Delgado">
-    <meta name="theme-color" content="#0f172a">
-    <meta name="robots" content="index, follow">
-
-    <!-- Seguridad: Content Security Policy (Nivel Básico para GitHub Pages) -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://via.placeholder.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io;">
-
-    <!-- Open Graph / LinkedIn / WhatsApp -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://fiestuki.github.io/davidconsultorit/"> <!-- CAMBIAR POR TU URL REAL -->
-    <meta property="og:title" content="Jesús David Pérez | Ciberseguridad & Sistemas">
-    <meta property="og:description" content="Especialista IT Senior. Soluciones robustas en Ciberseguridad, Redes y Administración de Sistemas.">
-    <meta property="og:image" content="https://fiestuki.github.io/davidconsultorit/assets/images/profile.jpg"> <!-- CAMBIAR POR TU URL REAL -->
-
+    
     <title>Jesús David Pérez | Ciberseguridad & Sistemas</title>
 
-    <!-- Favicon SVG Generado (Icono de Terminal) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230f172a%22 rx=%2220%22/><path d=%22M30 35 L45 50 L30 65 M50 65 L70 65%22 stroke=%22%2338bdf8%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
-
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Inter para texto, JetBrains Mono para toque técnico -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Estilos CSS -->
+    <!-- Custom CSS (Puedes mover esto a tu archivo css/styles.css) -->
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
-            --success: #10b981;
-            --error: #ef4444;
+            --bg-color: #0f172a;       /* Slate 900 */
+            --card-bg: #1e293b;        /* Slate 800 */
+            --text-primary: #f8fafc;   /* Slate 50 */
+            --text-secondary: #94a3b8; /* Slate 400 */
+            --accent: #38bdf8;         /* Sky 400 */
+            --accent-hover: #0ea5e9;   /* Sky 500 */
             --nav-bg: rgba(15, 23, 42, 0.95);
         }
 
+        /* Reset básico */
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
         
         body {
@@ -59,7 +43,7 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .logo { font-family: 'JetBrains Mono', monospace; }
+        h1, h2, h3, .logo, .mono-font { font-family: 'JetBrains Mono', monospace; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; }
 
@@ -188,15 +172,10 @@
         .tech-item {
             background: rgba(255,255,255,0.05); padding: 10px 20px; border-radius: 50px;
             font-size: 0.9rem; display: flex; align-items: center; gap: 8px; border: 1px solid transparent;
-            transition: 0.3s;
         }
-        .tech-item:hover { 
-            border-color: var(--accent); 
-            background: rgba(56, 189, 248, 0.1); 
-            transform: scale(1.05);
-        }
+        .tech-item:hover { border-color: var(--accent); background: rgba(56, 189, 248, 0.1); }
 
-        /* Contact Grid & Form Validation */
+        /* Contact Grid */
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; margin-top: 40px; }
         .contact-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
         .contact-item i { 
@@ -208,35 +187,14 @@
         .form-group input, .form-group textarea {
             width: 100%; padding: 12px; background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1);
             border-radius: 5px; color: white; font-family: 'Inter';
-            transition: border-color 0.3s;
         }
-        
-        /* Validación Visual en Tiempo Real */
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
-        .form-group input:valid:not(:placeholder-shown), 
-        .form-group textarea:valid:not(:placeholder-shown) {
-            border-color: var(--success);
-        }
-        .form-group input:invalid:not(:placeholder-shown) {
-            border-color: var(--error);
-        }
 
         /* Footer */
         footer { background: #0b1120; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
         .social-links { margin: 20px 0; }
         .social-links a { margin: 0 10px; font-size: 1.5rem; color: var(--text-secondary); }
         .social-links a:hover { color: var(--accent); }
-
-        /* Animaciones Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -271,8 +229,10 @@
     <!-- Hero Section -->
     <header id="home" class="hero">
         <div class="container hero-content">
-            <div class="hero-text reveal active">
+            <div class="hero-text">
+                <!-- CORRECCIÓN APLICADA AQUÍ -->
                 <p class="greeting">// Hola, soy</p>
+                
                 <h1 class="name">Jesús David <br><span class="highlight">Pérez Delgado.</span></h1>
                 
                 <!-- Efecto Typewriter -->
@@ -284,18 +244,19 @@
                 
                 <div class="hero-cta">
                     <a href="#contact" class="btn btn-primary">Contactar <i class="fas fa-arrow-right"></i></a>
+                    <!-- Recuerda subir tu PDF a la carpeta assets -->
                     <a href="./assets/cv-jesus-perez.pdf" download class="btn btn-outline">Descargar CV <i class="fas fa-download"></i></a>
                 </div>
             </div>
-            <div class="hero-image reveal active">
-                <!-- Sugerencia: Convierte esta imagen a .webp para mejor rendimiento -->
-                <img src="./assets/images/profile.webp" alt="Jesús David Pérez Delgado" class="profile-pic" loading="lazy" onerror="this.src='https://via.placeholder.com/320x320/1e293b/38bdf8?text=JDP'">
+            <div class="hero-image">
+                <!-- Placeholder si no tienes foto aún -->
+                <img src="./assets/images/profile.jpg" alt="Jesús David Pérez Delgado" class="profile-pic" onerror="this.src='https://via.placeholder.com/320x320/1e293b/38bdf8?text=JDP'">
             </div>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="section reveal">
+    <section id="about" class="section">
         <div class="container">
             <h2 class="section-title text-center" style="margin-bottom: 40px;">Sobre Mí<span class="highlight">.</span></h2>
             <div class="glass-card" style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -310,7 +271,7 @@
     </section>
 
     <!-- Tech Stack Section -->
-    <section id="stack" class="section reveal" style="background: rgba(255,255,255,0.02);">
+    <section id="stack" class="section" style="background: rgba(255,255,255,0.02);">
         <div class="container text-center">
             <h2 class="section-title">Stack Tecnológico<span class="highlight">.</span></h2>
             <p style="color: var(--text-secondary); margin-bottom: 30px;">Herramientas y tecnologías que domino</p>
@@ -329,7 +290,7 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="section reveal">
+    <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title text-center" style="margin-bottom: 50px;">Experiencia Laboral<span class="highlight">.</span></h2>
             <div class="timeline">
@@ -340,7 +301,7 @@
                         <span class="date">Dic 2024 - Jun 2025</span>
                         <h3>Técnico Soporte</h3>
                         <h4>Inerza, S.A. (HiperReg)</h4>
-                        <p>Gestión de soporte técnico para el Gobierno de Canarias. <strong>Logro:</strong> Garantía de alta disponibilidad en sistemas públicos críticos mediante resolución rápida de incidencias.</p>
+                        <p>Gestión y soporte técnico especializado para el Gobierno de Canarias. Mantenimiento y resolución de incidencias garantizando la alta disponibilidad de sistemas públicos críticos.</p>
                     </div>
                 </div>
 
@@ -350,7 +311,7 @@
                         <span class="date">Oct 2024 - Dic 2024</span>
                         <h3>Soporte Técnico Informático</h3>
                         <h4>Fujitsu Serviclients Canarias</h4>
-                        <p>Soporte a plataformas educativas. <strong>Logro:</strong> Aseguramiento de la operatividad tecnológica en entornos educativos sensibles.</p>
+                        <p>Soporte a la educación dentro del marco del Gobierno de Canarias. Aseguramiento del funcionamiento de plataformas y recursos tecnológicos educativos.</p>
                     </div>
                 </div>
 
@@ -360,7 +321,7 @@
                         <span class="date">Jun 2003 - Nov 2020</span>
                         <h3>Consultor y Soporte Técnico Senior</h3>
                         <h4>Consultores Canarios de Informática</h4>
-                        <p>Liderazgo en proyectos de consultoría y soporte integral. <strong>Logro:</strong> 17 años de estabilidad y mejora continua en infraestructuras de clientes multisectoriales.</p>
+                        <p>Más de 17 años liderando proyectos de consultoría, instalación de software de gestión y soporte integral (Hardware, Redes, Software) a empresas multisectoriales.</p>
                     </div>
                 </div>
 
@@ -369,7 +330,7 @@
     </section>
 
     <!-- Education & Certifications Section -->
-    <section id="education" class="section reveal" style="background: rgba(255,255,255,0.02);">
+    <section id="education" class="section" style="background: rgba(255,255,255,0.02);">
         <div class="container">
             <div class="contact-grid" style="align-items: start;">
                 
@@ -420,7 +381,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section reveal">
+    <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title text-center">Iniciemos un Proyecto<span class="highlight">.</span></h2>
             <p class="text-center" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
@@ -451,37 +412,41 @@
                         </div>
                     </div>
                     
+                    <!-- Social Links Added -->
                     <div style="margin-top: 30px;">
                         <h4 style="margin-bottom: 15px;">Redes Profesionales</h4>
                         <div class="social-links" style="margin: 0; text-align: left;">
+                            <!-- RECUERDA PONER TUS ENLACES REALES AQUÍ -->
                             <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                             <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Formulario con ID para JS -->
+                <!-- FORMULARIO ACTUALIZADO CON FORMSPREE -->
+                <!-- INSTRUCCIÓN: Regístrate en formspree.io, crea un form y pega tu URL única abajo donde dice TU_CODIGO_AQUI -->
                 <form id="contact-form" action="https://formspree.io/f/mlgoaono" method="POST" class="glass-card">
                     
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" id="name" name="name" required placeholder=" " pattern="[A-Za-zÀ-ÿ\s]{3,}">
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre completo">
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
                     </div>
                     
                     <div class="form-group">
                         <label for="message">Mensaje</label>
-                        <textarea id="message" name="message" rows="5" required placeholder=" " minlength="10"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="¿En qué puedo ayudarte?"></textarea>
                     </div>
                     
                     <button type="submit" class="btn btn-primary" style="width: 100%;">
                         Enviar Mensaje <i class="fas fa-paper-plane"></i>
                     </button>
                     
+                    <!-- Mensaje de estado para JS -->
                     <p id="form-status" style="margin-top: 15px; text-align: center; font-weight: bold; display: none;"></p>
                 </form>
             </div>
@@ -499,7 +464,7 @@
 
     <!-- Scripts -->
     <script>
-        // 1. Typewriter Effect
+        // 1. Typewriter Effect Logic
         const roles = ["Administrador de Sistemas", "Especialista en Ciberseguridad", "Soporte IT Senior"];
         let i = 0;
         let timer;
@@ -514,7 +479,7 @@
                 timer = setTimeout(typeWriter, 100);
             } else if (!this.isDeleting && currentText === role) {
                 this.isDeleting = true;
-                timer = setTimeout(typeWriter, 2000);
+                timer = setTimeout(typeWriter, 2000); // Pausa al final
             } else if (this.isDeleting && currentText !== "") {
                 heading.innerText = role.substring(0, currentText.length - 1);
                 timer = setTimeout(typeWriter, 50);
@@ -543,20 +508,7 @@
             }
         });
 
-        // 3. Scroll Reveal Animation (Intersection Observer)
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // 4. Formspree AJAX Handling
+        // 3. Formspree AJAX Handling (Para que no recargue la página)
         var form = document.getElementById("contact-form");
         
         async function handleSubmit(event) {
@@ -564,8 +516,9 @@
             var status = document.getElementById("form-status");
             var data = new FormData(event.target);
             
+            // Verificar si el usuario puso su ID de Formspree
             if(form.action.includes("TU_CODIGO_AQUI")) {
-                status.innerHTML = "⚠️ Configura tu ID de Formspree en el HTML.";
+                status.innerHTML = "⚠️ Error: Falta configurar el ID de Formspree en el HTML.";
                 status.style.color = "#ef4444";
                 status.style.display = "block";
                 return;
@@ -574,31 +527,37 @@
             fetch(event.target.action, {
                 method: form.method,
                 body: data,
-                headers: { 'Accept': 'application/json' }
+                headers: {
+                    'Accept': 'application/json'
+                }
             }).then(response => {
                 if (response.ok) {
-                    status.innerHTML = "✅ ¡Mensaje enviado correctamente!";
-                    status.style.color = "#10b981";
+                    status.innerHTML = "✅ ¡Gracias! Tu mensaje ha sido enviado correctamente.";
+                    status.style.color = "#10b981"; // Verde
                     status.style.display = "block";
                     form.reset();
                 } else {
-                    status.innerHTML = "❌ Error al enviar. Inténtalo de nuevo.";
-                    status.style.display = "block";
-                    status.style.color = "#ef4444";
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Oops! Hubo un problema al enviar tu formulario";
+                        }
+                        status.style.display = "block";
+                        status.style.color = "#ef4444"; // Rojo
+                    })
                 }
             }).catch(error => {
-                status.innerHTML = "❌ Error de conexión.";
+                status.innerHTML = "Oops! Hubo un problema de conexión.";
                 status.style.display = "block";
                 status.style.color = "#ef4444";
             });
         }
         
         form.addEventListener("submit", handleSubmit);
-        document.addEventListener('DOMContentLoaded', typeWriter);
 
-        // 5. Easter Egg para Consola (Factor Wow)
-        console.log("%c🔒 ¿Buscando vulnerabilidades? Buen ojo.", "color: #38bdf8; font-size: 16px; font-weight: bold;");
-        console.log("Si quieres hablar de seguridad o sistemas, escríbeme a david_perezdelgado@hotmail.com");
+        // Iniciar Typewriter al cargar
+        document.addEventListener('DOMContentLoaded', typeWriter);
     </script>
 </body>
 </html>
