@@ -14,7 +14,7 @@ Este repositorio alberga el código fuente de mi portfolio profesional personal.
 
 El objetivo principal es presentar mi trayectoria profesional de más de 17 años en el sector IT, destacando mis competencias en ciberseguridad perimetral, administración de redes y soporte técnico integral para infraestructuras críticas.
 
-### 🌐 Ver Sitio Web👉 **[Acceder al Portfolio Online](thub.com/Fiestuki/davidconsultorit)** *(Reemplazar con tu URL real)*
+### 🌐 Ver Sitio Web👉 **[Acceder al Portfolio Online](https://fiestuki.github.io/davidconsultorit/)** *(Reemplazar con tu URL real)*
 
 
 ---
