@@ -1,4 +1,4 @@
-# Portfolio Profesional | Jesús David Pérez Delgado
+# Portafolio Profesional | Jesús David Pérez Delgado
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -14,7 +14,7 @@ Este repositorio alberga el código fuente de mi portfolio profesional personal.
 
 El objetivo principal es presentar mi trayectoria profesional de más de 17 años en el sector IT, destacando mis competencias en ciberseguridad perimetral, administración de redes y soporte técnico integral para infraestructuras críticas.
 
-### 🌐 Ver Sitio Web👉 **[Acceder al Portfolio Online](thub.com/Fiestuki/davidconsultorit)** *(Reemplazar con tu URL real)*
+### 🌐 Ver Sitio Web👉 **[Acceder al Portfolio Online](https://fiestuki.github.io/davidconsultorit/)** *(Reemplazar con tu URL real)*
 
 
 ---
